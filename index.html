@@ -409,6 +409,13 @@
                   <p class="item-intro text-muted">Which nutritional value do we care ?</p>
                   <img class="img-fluid d-block mx-auto" src="img/portfolio/brands_french.jpg" alt="">
                   <p>The goal of our project is to give the consumer advices about the healthiness of the products for the different categories according to a specific score.
+                    First, we explored the dataset, to find the intrinsic relationships that connect each category. From our analysis, many confirmations of what the common sense says have been found. For example, we show the average distributions of the categories for the variables carbohydrates and fats. What we can observe is that categories such as salty snacks, sugary snacks and potatoes have low fat content (generally), while high carbohydrate contents. Other categories, such as dairy products, have higher fat content than carbohydrates, and so on.
+
+                    <div>
+                        <a href="https://plot.ly/~MikeLassi/31/?share_key=Wmwg145HE2DFTInTtV109u" target="_blank" title="carbohydrates_100gfat_100g" style="display: block; text-align: center;"><img src="https://plot.ly/~MikeLassi/31.png?share_key=Wmwg145HE2DFTInTtV109u" alt="carbohydrates_100gfat_100g" style="max-width: 100%;width: 900px;"  width="900" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                        <script data-plotly="MikeLassi:31" sharekey-plotly="Wmwg145HE2DFTInTtV109u" src="https://plot.ly/embed.js" async></script>
+                    </div>
+                    
                     We decide to create our own score that includes three features available in the data set: Nutritional score, Energy over 100g and number of palm oil ingredients.<br>
                     In order to fill the missing data for the nutritional score and the product categories, we decided to use a Random Forest Classifier based on the following features:  
                     energy, fat, sugars, proteins, carbohydrates and salt for 100 g of products.<br>
@@ -416,7 +423,7 @@
                     
 
                     <div>
-                      <a href="https://plot.ly/~eliBetta/14/?share_key=ld12Ddwc1KTfb3keJM3bM0" target="_blank" title="t-sne" style="display: block; text-align: center;"><img src="https://plot.ly/~eliBetta/14.png?share_key=ld12Ddwc1KTfb3keJM3bM0" alt="t-sne" style="max-width: 100%;width: 1000px;"  width="1000" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                      <a href="https://plot.ly/~eliBetta/14/?share_key=ld12Ddwc1KTfb3keJM3bM0" target="_blank" title="t-sne" style="display: block; text-align: center;"><img src="https://plot.ly/~eliBetta/14.png?share_key=ld12Ddwc1KTfb3keJM3bM0" alt="t-sne" style="max-width: 100%;width: 1500px;"  width="1500" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
                       <script data-plotly="eliBetta:14" sharekey-plotly="ld12Ddwc1KTfb3keJM3bM0" src="https://plot.ly/embed.js" async></script>
                   </div>
                   
