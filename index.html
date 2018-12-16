@@ -78,7 +78,7 @@
             <ul class="timeline">
               <li>
                 <div class="timeline-image">
-                  <img class="rounded-circle  img-fluid" src="img/about/foodCat.jpg" alt="">
+                  <img class="rounded-circle  img-fluid" src="img/about/FoodCat.jpg" alt="">
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
@@ -376,12 +376,13 @@
                     In the table below there is an example of how we divided the different products according the above cited categories.
 
                     <div>
-    <a href="https://plot.ly/~eliBetta/12/?share_key=agmeP1xXVT4NUWgpDZZQQC" target="_blank" title="product_table" style="display: block; text-align: center;"><img src="https://plot.ly/~eliBetta/12.png?share_key=agmeP1xXVT4NUWgpDZZQQC" alt="product_table" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="eliBetta:12" sharekey-plotly="agmeP1xXVT4NUWgpDZZQQC" src="https://plot.ly/embed.js" async></script>
-</div>
-  
+                    <a href="https://plot.ly/~eliBetta/12/?share_key=agmeP1xXVT4NUWgpDZZQQC" target="_blank" title="product_table" style="display: block; text-align: center;"><img src="https://plot.ly/~eliBetta/12.png?share_key=agmeP1xXVT4NUWgpDZZQQC" alt="product_table" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                    <script data-plotly="eliBetta:12" sharekey-plotly="agmeP1xXVT4NUWgpDZZQQC" src="https://plot.ly/embed.js" async></script>
+                    </div>
                   
+                
                     </p>
+                  
                 </div>
               </div>
             </div>
@@ -408,14 +409,23 @@
                   <p class="item-intro text-muted">Which nutritional value do we care ?</p>
                   <img class="img-fluid d-block mx-auto" src="img/portfolio/NutritionalValues.jpg" alt="">
                   <p>The goal of our project is to give the consumer advices about the healthiness of the products for the different categories according to a specific score.
-                    We decide to create our own score that includes three features available in the data set: Nutritional score, Energy over 100g and number of oil palm ingredients.<br>
+                    We decide to create our own score that includes three features available in the data set: Nutritional score, Energy over 100g and number of palm oil ingredients.<br>
                     In order to fill the missing data for the nutritional score and the product categories, we decided to use a Random Forest Classifier based on the following features:  
-                    energy, fat sugars proteins carbohydrates sodium and salt for 100 g of products.<br>
-                    The figure below represents a complete tsne plot with all the products obtained after the classifier. 
+                    energy, fat, sugars, proteins, carbohydrates and salt for 100 g of products.<br>
+                    We perfored a t-SNE dimensionality reduction to check whether the space in which we are representing the data is sufficiently good to distinguish between categories. 
+                    
 
-                    ?show a tsne results or good mike graph
+                    <div>
+                      <a href="https://plot.ly/~eliBetta/14/?share_key=ld12Ddwc1KTfb3keJM3bM0" target="_blank" title="t-sne" style="display: block; text-align: center;"><img src="https://plot.ly/~eliBetta/14.png?share_key=ld12Ddwc1KTfb3keJM3bM0" alt="t-sne" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                      <script data-plotly="eliBetta:14" sharekey-plotly="ld12Ddwc1KTfb3keJM3bM0" src="https://plot.ly/embed.js" async></script>
+                  </div>
+                  
+                  It is possible to see that the categories are well separated one another: this indicates the possibilities to build a classifier that categorizes unlabeled data. With our Random Forest we managed to achieve a F1 score of 0.87. Moreover, we can observe that subclusters are present in the data: this could indicate that a finer representation of food categories is needed to give better health advices! This categorization could be improved by national authorities to make people live healthier lives.
+                </p>
+                <p> Similarly, we constructed another Random Forest to predict the nutritional grade of unlabeled products. The nutritional grade is a French score that indicates how a product affects health, and it is one of the main elements of the our food advisor. Since it is missing in most of the non-French data, we extended it. The performance of the classifier was in this case 0.77 (F1 score). Most of the misclassified data was represented in adjacent score to the real one: hence the error made during the classification was generally low.
 
-                    This our first achievement: we provide the consumers some missing values for the nutritional score that he can count on to choose what to eat.
+                    This is our first achievement: we provide the consumers some missing values for the nutritional score that he can count on to choose what to eat. The next step is to expand this French nutritional grade, to get to our food advisor.
+
                   </p>
 				
 				  
@@ -444,13 +454,17 @@
                   <h2 class="text-uppercase">Product Advisor Based on the Category</h2>
                   <p class="item-intro text-muted"> Let's choose what you wanna eat </p>
                   <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
-                  <p>In the final part, we want to give you our Product advisor for French product according to the following score:
+                  <p>In the final part, we want to give you a product advisor. Imagine being at the supermarket, in doubt whether choosing pork ribs or chicken for dinner. It would be handy to have a score that tells you which product is more likely to have a negative impact on your health and on the environment.</p>
+
+                  <p> The product score is based on the following metrics: up to 3.5 points are  given by the French nutritional score, up to 1 point by the absence of palm oil in the ingredients of the product (that is environmentally dangerous) and another 1.5 points inverse proportionally to the energetic content of the product. You can have a taste of how our score works in the following table, in which you can view the 20 best products for each above-mentioned category. </p>
+                   <p> <a href="file:///Users/elisabetta/Elisabettaaa.github.io/Elisabettaaa.github.io/score_table.html" >Click here to visualize the table. </a> </p>
 
 
 
 
-                    and now it's your turn : Imagine being at the supermarket, in doubt whether choosing pork ribs or chicken for dinner. It would be handy to have a score that tells you which product is more likely to have a negative impact on your health and on the environment.
 
+
+                  
 
                    <br> Are you satified ? 😁
                   </p>
