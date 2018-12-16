@@ -274,7 +274,7 @@
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="https://www.linkedin.com/in/elisabetta-pagliara-a961bba4/">
                     <i class="fab fa-linkedin-in"></i>
                   </a>
                 </li>
@@ -332,7 +332,7 @@
         </div>
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+            <p class="large text-muted">For any kind of information doesn't hesitate to contact us !</p>
           </div>
         </div>
       </div>
@@ -383,9 +383,16 @@
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
                   <h2 class="text-uppercase">Food Categorization</h2>
-                  <p class="item-intro text-muted">Elisabetta do the categorization, show the product and the category in one tabella.</p>
+                  <p class="item-intro text-muted">Let's start looking at the dataset and how we decide to analyse it.</p>
                   <img class="img-fluid d-block mx-auto" src="img/portfolio/foodCategory.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                  <p>The data set we analysed comes from the Open Food Facts database that gathers information and data on food products from around the world and it gets constantly update.
+                    The data set includes almost 1 GB of data, but more than half is rappresented by null or missing values. </p>
+                    <p>In our analysis, we decide to consider seven different food categories,
+                    getting rid of their null products: Bevarages, Cereal and Potatoes, Composite Foods,Fat and Souces, Fish and Meats and Eggs, Fruits and Vegetables, Milk and daity products, Salty Snacks and Sugary snacks.
+                    In the table below there is an example of how we divide the different products according the above cited categories.</p> 
+                    
+                    <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~eliBetta/6.embed"></iframe>
+                    </p>
                 </div>
               </div>
             </div>
@@ -394,7 +401,7 @@
       </div>
     </div>
 
-    <!-- Modal Food Category VS health-->
+    <!-- Module 2-->
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -408,19 +415,20 @@
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Food Category VS health</h2>
-                  <p class="item-intro text-muted">What is the distribution of the Nutri-Score within each food category ?</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">
-				  
-					<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~tomM/98.embed"></iframe>
+                  <h2 class="text-uppercase">Nutritional Values For Category</h2>
+                  <p class="item-intro text-muted">Which nutritional value do we care ?</p>
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/NutritionalValues.jpg" alt="">
+                  <p>The goal of our project is to give the consumer advices about the healthiness of the products for the different categories according to a specific score.
+                    We decide to create our own score that includes three features available in the data set: Nutritional score, Energy over 100g and number of oil palm ingredients.<br>
+                    In order to fill the missing data for the nutritional score and the product categories, we decided to use a Random Forest Classifier based on the following features:  
+                    energy, fat sugars proteins carbohydrates sodium and salt for 100 g of products.<br>
+                    The figure below represents a complete tsne plot with all the products obtained after the classifier. 
 
-                  <p>As excepted... the most healthy products are fruits and vegetables ! And obsiously you should avoid to eat snacks and beverages.
-						<br> <br>  
-					 Interestingly, the sugary snacks are worst for health than the salty snacks or the fatty products. Indeed the ratio of <i>e</i>  products is 49% for sugary snacks and 14% for salty snacks or 22% for fat and sauces.
-					 Moreover, the sum of <i> e + d </i> ratios is also higher for sugary snacks. 
-						<br> <br>  
-					 This could demonstrate that the real ennemy is maybe more sugar than salt or fat which contrast with the standard nutritional recommendations which usually emphasize on fat. 
-				  </p>
+                    ?show a tsne results or good mike graph
+
+                    This our first achievement: we provide the consumers some missing values for the nutritional score that he can count on to choose what to eat.
+                  </p>
+				
 				  
                 </div>
               </div>
@@ -430,7 +438,7 @@
       </div>
     </div>
 
-    <!-- Modal Brands VS Health -->
+    <!-- Module 3 -->
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -444,30 +452,21 @@
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Brands VS Health</h2>
-                  <p class="item-intro text-muted"> Does Carrefour products healthier than Leclerc ones ? </p>
+                  <h2 class="text-uppercase">Product Advisor Based on the Category</h2>
+                  <p class="item-intro text-muted"> Let's choose what you wanna eat </p>
                   <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
-				  
-					<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~tomM/96.embed"></iframe>
-					Yes... Unfortunalty, more than 50% of the products sold in France have a bad nutrition grade (<i>d</i> or <i>e</i>). 
-					The healthy product tagged with the grade <i>a</i> only represent 13% of the ~100,000 products in the data set.
-				
-					<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~tomM/102.embed"></iframe>
-					As seen previously, we observe that for almost all the biggest food brands present in France more than 40% of the products are "junk" food (products with labels 'e' or 'd'). 
-					We don't eat that well in France... 
-					<br> <br>
-					The exception is 'Picard' in which products tagged with <i>d</i> or <i>e</i> represent one third of the total number of products (which is already quite high...). 
-					Actually, Picard mainly sells frozen food which could be excpected to be healthier than the products sold by Netto (cheap product mainly industrial).  
-					<br> <br>
-					For each brand the score will be the average of the ratios for each nutri-score (<i>a</i>,<i>b</i>..) weighted by the score assigned to each nutri-score (5,4..).
-					A score of 5 for a brand means that 100% of the products sold by the brand are <i>a</i> (very healthy). 
-					<br> <br>
-					Bellow is displayed the 10 best (highest scores) and the 10 worst brands (lowest scores) regarding nutrition benefit. 											
-					
-					<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~tomM/114.embed"></iframe>
-					As we could expect, eating chocolate is not good... But, suprisingly the 6 worst brands are all chocolate ones except Monin which sell sirop.
-					The best brands are 'D'Aucy' - which sells a lot of vegetables and fruits in cans - and 'Charles et Alice' - which sells fruits in cup.						
-					
+                  <p>In the final part, we want to give you our Product advisor for French product according to the following score:
+
+
+
+
+                    and now it's your turn : let's choose the categoriy you are interested on, the number of products for category you wanna to visualize and how much healthy you wanna eat ( so the score):
+
+                   put the plotly final
+
+
+                   Are you satified ? 😁
+                  </p>
                 </div>
               </div>
             </div>
@@ -475,8 +474,9 @@
         </div>
       </div>
     </div>
+					
 
-    <!-- Modal Palm oil in France -->
+    <!-- module 4 -->
     <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -489,30 +489,20 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Palm oil in France</h2>
-                  <p class="item-intro text-muted">Does french products contain palm oil ?</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
-				  
-				  <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~tomM/110.embed"></iframe>
-				  
-					A large majority (87%) of the products in France don't contain palm oil ! Ok... it can be addressed that a lot of products don't need any oil (palm or not!).
-                  
-				  <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~tomM/112.embed"></iframe>
-				  
-					For all the brands more than 70% of the products does <b>NOT</b> contain palm oil.  
-					 <ul>
-					  <li>However, 27% of the products made by <i>Leclerc</i> contain or may contain palm oil. It is a high ratio!</li>
-					  <li> <i>Picard</i> and  <i>Monoprix</i> are the more "environmental" brand regarding palm oil presence in their products.</li>
-					</ul>
-					
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                 <!-- Module 4 -->
+                 <h2 class="text-uppercase">Food Category VS health</h2>
+                 <p class="item-intro text-muted">What is the distribution of the Nutri-Score within each food category ?</p>
+                 <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">  <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~tomM/98.embed"></iframe>
+
+                 <p>As excepted... the most healthy products are fruits and vegetables ! And obsiously you should avoid to eat snacks and beverages.<br> <br>  Interestingly, the sugary snacks are worst for health than the salty snacks or the fatty products. Indeed the ratio of <i>e</i>  products is 49% for sugary snacks and 14% for salty snacks or 22% for fat and sauces.Moreover, the sum of <i> e + d </i> ratios is also higher for sugary snacks. <br> <br>  This could demonstrate that the real ennemy is maybe more sugar than salt or fat which contrast with the standard nutritional recommendations which usually emphasize on fat. </p>         
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
 
     <!-- Modal 5 -->
     <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
@@ -527,10 +517,31 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Food Advisor</h2>
-                  <p class="item-intro text-muted"> Choose the best products !</p>
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                  <!-- Module 5 -->
+                  <h2 class="text-uppercase">Brands VS Health</h2>
+                  <p class="item-intro text-muted"> Does Carrefour products healthier than Leclerc ones ? </p>
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
+          
+          <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~tomM/96.embed"></iframe>
+          Yes... Unfortunalty, more than 50% of the products sold in France have a bad nutrition grade (<i>d</i> or <i>e</i>). 
+          The healthy product tagged with the grade <i>a</i> only represent 13% of the ~100,000 products in the data set.
+        
+          <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~tomM/102.embed"></iframe>
+          As seen previously, we observe that for almost all the biggest food brands present in France more than 40% of the products are "junk" food (products with labels 'e' or 'd'). 
+          We don't eat that well in France... 
+          <br> <br>
+          The exception is 'Picard' in which products tagged with <i>d</i> or <i>e</i> represent one third of the total number of products (which is already quite high...). 
+          Actually, Picard mainly sells frozen food which could be excpected to be healthier than the products sold by Netto (cheap product mainly industrial).  
+          <br> <br>
+          For each brand the score will be the average of the ratios for each nutri-score (<i>a</i>,<i>b</i>..) weighted by the score assigned to each nutri-score (5,4..).
+          A score of 5 for a brand means that 100% of the products sold by the brand are <i>a</i> (very healthy). 
+          <br> <br>
+          Bellow is displayed the 10 best (highest scores) and the 10 worst brands (lowest scores) regarding nutrition benefit.                       
+          
+          <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~tomM/114.embed"></iframe>
+          As we could expect, eating chocolate is not good... But, suprisingly the 6 worst brands are all chocolate ones except Monin which sell sirop.
+          The best brands are 'D'Aucy' - which sells a lot of vegetables and fruits in cans - and 'Charles et Alice' - which sells fruits in cup.           
+          
                 </div>
               </div>
             </div>
@@ -538,6 +549,7 @@
         </div>
       </div>
     </div>
+
 
     <!-- Modal 6 -->
     <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
@@ -552,11 +564,23 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                  <!-- Module 6 -->
+                  <h2 class="text-uppercase">Palm oil in France</h2>
+                  <p class="item-intro text-muted">Does french products contain palm oil ?</p>
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
+          
+                  <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~tomM/110.embed"></iframe>
+          
+                  A large majority (87%) of the products in France don't contain palm oil ! Ok... it can be addressed that a lot of products don't need any oil (palm or not!).
+                  
+                <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~tomM/112.embed"></iframe>
+          
+                For all the brands more than 70% of the products does <b>NOT</b> contain palm oil.  
+               <ul>
+               <li>However, 27% of the products made by <i>Leclerc</i> contain or may contain palm oil. It is a high ratio!</li>
+               <li> <i>Picard</i> and  <i>Monoprix</i> are the more "environmental" brand regarding palm oil presence in their products.</li>
+               </ul>
+          
                 </div>
               </div>
             </div>
@@ -564,6 +588,7 @@
         </div>
       </div>
     </div>
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
